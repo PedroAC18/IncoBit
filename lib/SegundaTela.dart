@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SegundaTela extends StatefulWidget {
   String valor;
-  SegundaTela({this.valor});
+  SegundaTela({required this.valor});
   @override
   _SegundaTelaState createState() => _SegundaTelaState();
 }
