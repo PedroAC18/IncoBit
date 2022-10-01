@@ -36,11 +36,11 @@ class _LoginState extends State<Login> {
         SizedBox(
           height: 60,
         ),
-        inputStyle("Username", "Enter your username"),
+        inputStyle("Enter your username"),
         SizedBox(
           height: 20,
         ),
-        inputStyle("Password", "Enter your password"),
+        inputStyle("Enter your password"),
         SizedBox(
           height: 60,
         ),
@@ -85,13 +85,11 @@ class _LoginState extends State<Login> {
   }
 }
 
-Widget inputStyle(String title, String hinTxt) {
+Widget inputStyle(String title) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(40, 5, 20, 10),
     child: Row(
       children: [
-        Text("$title :", style: TextStyle(fontSize: 20),),
-        SizedBox(width: 10,),
         Expanded(
           child: Container(
             decoration: BoxDecoration(
@@ -108,7 +106,7 @@ Widget inputStyle(String title, String hinTxt) {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   contentPadding: EdgeInsets.only(left: 10),
-                  hintText: hinTxt),
+                  hintText: title),
             ),
           ),
         ),
