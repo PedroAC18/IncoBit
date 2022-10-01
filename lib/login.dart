@@ -26,11 +26,12 @@ class _LoginState extends State<Login> {
               color: Colors.yellow,
               borderRadius: BorderRadius.only(
                   bottomRight: Radius.elliptical(80, 80),
+                  bottomLeft: Radius.elliptical(80, 80),
               ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-            child: Image.asset("assets/logo.png"),
+            child: Image.asset("logo.png"),
           ),
         ),
         SizedBox(
@@ -57,7 +58,7 @@ class _LoginState extends State<Login> {
             },
             child: Text(
               "Login",
-              style: TextStyle(fontSize: 20, color: Colors.grey),
+              style: TextStyle(fontSize: 20, color: Colors.black87),
             ),
           ),
         ),
