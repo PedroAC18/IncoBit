@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     List<Widget> widgets = [home(), Text("Coming Soon"), Text("Coming Soon"), profile()];
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(0.1),
+      backgroundColor: Colors.black.withOpacity(0.1),
       bottomNavigationBar: BottomNavigationBar(
           onTap: (index){
             setState(() {
@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
                 icon: new Icon(Icons.home),
                 label: "Home",
-                backgroundColor: Colors.lightGreen),
+                backgroundColor: Colors.black45),
             BottomNavigationBarItem(
                 icon: new Icon(Icons.account_balance_wallet), label: "Carteira"),
             BottomNavigationBarItem(
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
           Container(
             height: 230,
             decoration: BoxDecoration(
-              color: Colors.lightBlue,
+              color: Colors.yellow,
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.elliptical(200, 40),
                   bottomRight: Radius.elliptical(200, 40)
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
               alignment: Alignment.center,
               child: Text(
                 "IncoBit",
-                style: GoogleFonts.varelaRound(fontSize: 60, color: Colors.white),
+                style: GoogleFonts.varelaRound(fontSize: 60, color: Colors.black),
               ),
             ),
           ),

@@ -32,7 +32,7 @@ class _SplashState extends State<Splash> {
     return Container(
       color: Colors.yellow,
       child: Container(
-        child: Image.asset("logo_nova.png"),
+        child: Image.asset("logo.png"),
       ),
     );
   }
