@@ -18,6 +18,7 @@ class _RegisterState extends State<Register> {
   Widget conteudo() {
     return Column(
       children: [
+        new Expanded(child:
         Container(
           height: 250,
           width: double.infinity,
@@ -29,8 +30,10 @@ class _RegisterState extends State<Register> {
           ),
           child: Padding(
             padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-            child: Image.asset("assets/logo.png"),
+            child: Image.asset("assets/logo_nova.png"),
           ),
+        ),
+          flex:5,
         ),
         SizedBox(
           height: 40,
@@ -39,7 +42,6 @@ class _RegisterState extends State<Register> {
         inputStyle("Password"),
         inputStyle("Confirm Password"),
         inputStyle("Location"),
-        inputStyle("Identification Number"),
         SizedBox(
           height: 20,
         ),

@@ -19,20 +19,25 @@ class _LoginState extends State<Login> {
   Widget conteudo() {
     return Column(
       children: [
-        Container(
-          height: 250,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              color: Colors.yellow,
-              borderRadius: BorderRadius.only(
-                  bottomRight: Radius.elliptical(80, 80),
-                  bottomLeft: Radius.elliptical(80, 80),
+        new Expanded(
+          child:
+            Container(
+              height: 150,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.elliptical(80, 80),
+                      bottomLeft: Radius.elliptical(80, 80),
+                  ),
               ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-            child: Image.asset("logo.png"),
-          ),
+              child:
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                child: Image.asset("assets/logo_nova.png"),
+              ),
+            ),
+          flex: 1,
         ),
         SizedBox(
           height: 60,
