@@ -2,7 +2,6 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
-
 import 'Usuario.dart';
 
 class DAO {

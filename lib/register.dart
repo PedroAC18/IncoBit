@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'DAO.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -15,7 +16,13 @@ class _RegisterState extends State<Register> {
     );
   }
 
+  DAO dao = new DAO();
+
   Widget conteudo() {
+    TextEditingController _controllernome = TextEditingController();
+    TextEditingController _controlleremail = TextEditingController();
+    TextEditingController _controllerpassword = TextEditingController();
+
     return Column(
       children: [
         new Expanded(child:
@@ -38,10 +45,21 @@ class _RegisterState extends State<Register> {
         SizedBox(
           height: 40,
         ),
-        inputStyle("Email"),
-        inputStyle("Password"),
-        inputStyle("Confirm Password"),
-        inputStyle("Location"),
+        TextField(decoration: InputDecoration(
+          labelText: "Nome: "
+        ),
+          controller: _controllernome,
+        ),
+        TextField(decoration: InputDecoration(
+            labelText: "Email: "
+        ),
+          controller: _controlleremail,
+        ),
+        TextField(decoration: InputDecoration(
+            labelText: "Senha: "
+        ),
+          controller: _controllerpassword,
+        ),
         SizedBox(
           height: 20,
         ),
@@ -54,6 +72,7 @@ class _RegisterState extends State<Register> {
           ),
           child: TextButton(
             onPressed: (){
+              dao.salvarDadosUsuario(_controllernome.text, "", "", "", _controlleremail.text, _controllerpassword.text);
               Navigator.of(context).pop();
             },
             child: Text(
