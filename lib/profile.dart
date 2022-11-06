@@ -9,7 +9,7 @@ Widget profile() {
         Container(
           height: 230,
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: Colors.lightBlue,
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.elliptical(200, 40),
                 bottomRight: Radius.elliptical(200, 40)

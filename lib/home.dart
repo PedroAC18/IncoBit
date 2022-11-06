@@ -2,11 +2,27 @@ import 'package:crypto_font_icons/crypto_font_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navegacao_telas_app/profile.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
   @override
   State<Home> createState() => _HomeState();
+
+  _recuperarBancoDeDados() async {
+    final caminhoDB = await getDatabasesPath();
+    final localDb = join(caminhoDB, "bancoIncoBit.db");
+    var retorno = await openDatabase(
+      localDb,
+      version: 1,
+      onCreate: (db, dbVersaoRecente){
+        String sql = "CREATE TABLE usuarios (""id INTEGER PRIMARY KEY AUTOINCREMENT, ""nome VARCHAR, dataNascimento VARCHAR, telefone VARCHAR, localizacao VARCHAR, email VARCHAR , senha VARCHAR)";
+        db.execute(sql);
+      }
+    );
+    print(retorno.isOpen.toString());
+  }
 
 }
 
@@ -30,7 +46,7 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
                 icon: new Icon(Icons.home),
                 label: "Home",
-                backgroundColor: Colors.lightGreen),
+                backgroundColor: Colors.lightBlue),
             BottomNavigationBarItem(
                 icon: new Icon(Icons.account_balance_wallet), label: "Carteira"),
             BottomNavigationBarItem(

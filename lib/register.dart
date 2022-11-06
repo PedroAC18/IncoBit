@@ -23,7 +23,7 @@ class _RegisterState extends State<Register> {
           height: 250,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Colors.yellow,
+            color: Colors.lightBlue,
             borderRadius: BorderRadius.only(
               bottomRight: Radius.elliptical(80, 80),
             ),

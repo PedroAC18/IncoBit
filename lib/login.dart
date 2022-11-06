@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
               height: 150,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: Colors.yellow,
+                  color: Colors.lightBlue,
                   borderRadius: BorderRadius.only(
                       bottomRight: Radius.elliptical(80, 80),
                       bottomLeft: Radius.elliptical(80, 80),
@@ -54,7 +54,7 @@ class _LoginState extends State<Login> {
           height: 60,
           width: 200,
           decoration: BoxDecoration(
-              color: Colors.yellow,
+              color: Colors.lightBlue,
               borderRadius: BorderRadius.circular(20),
           ),
           child: TextButton(
