@@ -9,6 +9,10 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  TextEditingController _textEditingControllerUsername = TextEditingController();
+  TextEditingController _textEditingControllerSenha = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,11 +46,11 @@ class _LoginState extends State<Login> {
         SizedBox(
           height: 60,
         ),
-        inputStyle("Enter your username"),
+        inputStyle("Enter your username", _textEditingControllerUsername),
         SizedBox(
           height: 20,
         ),
-        inputStyle("Enter your password"),
+        inputStyle("Enter your password", _textEditingControllerSenha),
         SizedBox(
           height: 60,
         ),
@@ -58,7 +62,8 @@ class _LoginState extends State<Login> {
               borderRadius: BorderRadius.circular(20),
           ),
           child: TextButton(
-            onPressed: (){
+            onPressed: () async {
+              print(_textEditingControllerUsername.text);
               Navigator.of(context).pushNamed("/home");
             },
             child: Text(
@@ -89,34 +94,35 @@ class _LoginState extends State<Login> {
       ],
     );
   }
-}
 
-Widget inputStyle(String title) {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(40, 5, 20, 10),
-    child: Row(
-      children: [
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: Offset(0, 3))
-                ]),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 10),
-                  hintText: title),
+  Widget inputStyle(String title, TextEditingController controller) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(40, 5, 20, 10),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 2,
+                        blurRadius: 5,
+                        offset: Offset(0, 3))
+                  ]),
+              child: TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.only(left: 10),
+                    hintText: title),
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
+        ],
+      ),
+    );
+  }
 }
