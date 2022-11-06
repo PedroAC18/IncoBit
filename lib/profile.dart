@@ -5,6 +5,7 @@ Widget profile() {
   return new Scaffold(body:
     Column(
       children: [
+        new Expanded(child:
         Container(
           height: 230,
           decoration: BoxDecoration(
@@ -22,19 +23,21 @@ Widget profile() {
             ),
           ),
         ),
+          flex: 1,
+        ),
         Transform(
           transform: Matrix4.translationValues(0, -70, 0),
           child: Stack(
             children: [
-              Container(
-                height: 190,
-                width: 350,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(Icons.person, size: 160),
-              ),
+                  Container(
+                    height: 120,
+                    width: 250,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.person, size: 100),
+                  ),
             ],),
         ),
         listTile(Icons.mail, "julio@gmail.com"),
