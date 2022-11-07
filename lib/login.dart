@@ -1,5 +1,9 @@
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:navegacao_telas_app/DAO.dart';
+import 'package:navegacao_telas_app/Usuario.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -10,6 +14,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
+  DAO dao = new DAO();
   TextEditingController _textEditingControllerUsername = TextEditingController();
   TextEditingController _textEditingControllerSenha = TextEditingController();
 
@@ -63,8 +68,7 @@ class _LoginState extends State<Login> {
           ),
           child: TextButton(
             onPressed: () async {
-              print(_textEditingControllerUsername.text);
-              Navigator.of(context).pushNamed("/home");
+              checkLogin(_textEditingControllerUsername.text, _textEditingControllerSenha.text);
             },
             child: Text(
               "Login",
@@ -124,5 +128,16 @@ class _LoginState extends State<Login> {
         ],
       ),
     );
+  }
+
+  void checkLogin(String email, String senha) async {
+    Usuario usuario = await dao.listarUnicoUsuario(email);
+    if(usuario.getSenha().compareTo(md5.convert(utf8.encode(senha)).toString()) == 0) {
+      print("Sucesso no login!");
+      Navigator.of(context).pushNamed("/home");
+    }
+    else {
+      print("Email ou Senha invalidos");
+    }
   }
 }
