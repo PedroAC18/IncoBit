@@ -72,7 +72,7 @@ class _RegisterState extends State<Register> {
           ),
           child: TextButton(
             onPressed: (){
-              dao.salvarDadosUsuario(_controllernome.text, "", "", "", _controlleremail.text, _controllerpassword.text);
+              dao.salvarDadosUsuario(_controllernome.text, "dasda", "asdasd", "asda", _controlleremail.text, _controllerpassword.text);
               Navigator.of(context).pop();
             },
             child: Text(

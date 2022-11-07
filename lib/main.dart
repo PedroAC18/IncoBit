@@ -1,5 +1,6 @@
 
-import 'package:flutter/material.dart';
+import
+'package:flutter/material.dart';
 import 'package:navegacao_telas_app/home.dart';
 import 'package:navegacao_telas_app/register.dart';
 import 'package:navegacao_telas_app/profile.dart';
