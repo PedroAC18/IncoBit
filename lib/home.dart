@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navegacao_telas_app/profile.dart';
 
+import 'package:http/http.dart' as http;
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
   @override
