@@ -19,7 +19,7 @@ class _SplashState extends State<Splash> {
   }
 
   startTimer() {
-    var duration = Duration(seconds: 2);
+    var duration = Duration(seconds: 1);
     return Timer(duration, route);
   }
 
@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow,
+      color: Colors.lightBlue,
       child: Container(
         child: Image.asset("logo_nova.png"),
       ),

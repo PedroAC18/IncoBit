@@ -71,8 +71,8 @@ class DAO {
 
     if(!usuario.isEmpty) {
       user = new Usuario(
-          usuario[0]["id"], usuario[0]["nome"], usuario[0]["dataNascimento"],
-          usuario[0]["telefone"], usuario[0]["localizacao"], usuario[0]["email"], usuario[0]["senha"]);
+          usuario[0]["id"], usuario[0]["nome"], "",
+          "", "", usuario[0]["email"], usuario[0]["senha"]);
     }
 
     print("user = ${user.toString()}");
